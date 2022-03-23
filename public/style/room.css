@@ -114,7 +114,7 @@
   .question-wrapper .actions > a:nth-child(2){
       margin-left: 2.4rem;
   }
-  .question-wrapper .actions .cheked,
+  .question-wrapper .actions .checked,
   .question-wrapper .actions .delete{
     color: var(--gray-dark);
     font-size: 1.6rem;

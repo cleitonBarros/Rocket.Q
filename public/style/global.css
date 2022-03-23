@@ -95,6 +95,7 @@ button.red, .btn.red{
 background: var(--red);
 color: var(--white);
 }
+
 button.gray, .btn.gray{
     background: var(--gray-light);
     color: var(--gray-dark)
