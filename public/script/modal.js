@@ -13,9 +13,6 @@ export default function Modal(){
       modalWrapper.classList.remove("active")
 
     }
-
-
-
     return{
         open,
         close

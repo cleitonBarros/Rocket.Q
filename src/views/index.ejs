@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--CSS-->
-    <link rel="stylesheet" href="style/global.css">
-    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/home.css">
 
     <!--fonte google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,9 @@
 <body>
     <div id="home"class="content">
         <header>
-            <img src="images/Logo.svg" alt="Rocket.Q logo">
+            <a href="/">
+                <img src="/images/Logo.svg" alt="Rocket.Q logo">
+            </a>
         </header>
         <div id="bg">
             <div class="ball top"></div>
@@ -27,29 +29,7 @@
         </div>
         <main>
             <div class="container">
-                <section>
-                    <h2>Entre como participante</h2>
-                    <form action="">
-                        <label class="screen-only" for="room-id">Codigo da sala</label>
-                         <input type="number" id="room-id" placeholder="codigo da sala"></input>
-                        <button>
-                            <img src="images/log-enter.svg" alt="Entrar na sala">
-                            Entrar na sala
-                        </button>
-                    </form>
-                </section>
-                <div class="separator">
-                    <div></div>
-                    <div> OU </div>
-                    <div></div>
-                </div>
-                <section>
-                    <h2>Crie sua propria sala de forma facil</h2>
-                    <a class="btn outlined" href="/create-pass.html">
-                        <img src="images/users.svg" alt="Criar sala" >
-                        Criar sala
-                    </a>
-                </section>
+                <%- include(`parts/${page}`)%>
             </div>
         </main>
 
