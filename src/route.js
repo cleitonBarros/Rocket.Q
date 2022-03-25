@@ -8,12 +8,14 @@ route.get('/create-pass', (req,res)=> res.render("index",{page: 'create-pass'}))
 
 
 /*room */
-route.get('/room/:room', (req,res)=> res.render("room"))
+route.get('/room/:room', roomController.open)
+route.post('/create-room',roomController.create)
+route.post('/enterroom',roomController.enter)
 
 
 //formato que o formalario tem que passar dados pra modal
+route.post('/question/create/:room', QuestionController.create)
 route.post('/question/:room/:question/:actions', QuestionController.index)
-route.post('/create-room',roomController.create)
 
 
 module.exports = route

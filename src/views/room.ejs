@@ -21,13 +21,14 @@
 </head>
 <body>
     <div id="room"class="content">
+        <!--Button tops-->
         <header>
             <a href="/">
                 <img src="/images/Logo.svg" alt="Rocket.Q logo">
             </a>
             <div class="button">
-                <div class="btn outlined" id="room-id" data-id="335689">
-                    #335689
+                <div class="btn outlined" id="room-id" data-id="<%= roomId %>">
+                    #<%= roomId %>
                     <img src="/images/copy.svg" alt="copiar numero da sala">
                 </div>
                 <a href="/create-pass" class="btn">
@@ -36,11 +37,11 @@
                 </a>
             </div>
         </header>
-
+    <!--quetions form-->
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="">
+                <form action="/question/create/<%= roomId %>" method="POST">
                     <label for-id="question" class="screen-only">O que voce quer perguntar?</label>
                     <textarea name="question" id="question" placeholder="O que voce quer perguntar?"></textarea>
                     <footer>
@@ -56,87 +57,52 @@
             <section id="questions">
                 <h2 class="screen-only">Perguntas da comunidade</h2>
                 <div class="questions">
-                    <div class="question-wrapper">
-                        <div class="quetion-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="user">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferença entre CONST, VAR e LEt no Javascript?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a href="#" class="checked" data-id="2">
-                                <img src="/images/check.svg" >  
-                            </a>
-                            <a href="#"class="delete" data-id="2">
-                                <img src="/images/bin.svg" >
-                                 
-                            </a>
-                        </div>
-                        
-                    </div>
+                    <% if(isNoQuestion){%>
+                        <%- include('parts/noquestion') %>
+                   <% } %>
 
-                    <div class="question-wrapper">
-                        <div class="quetion-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="user">
+                    <%  questions.forEach(question => {%>
+                        <div class="question-wrapper">
+                            <div class="quetion-content">
+                                <div class="user">
+                                    <img src="/images/user.svg" alt="user">
+                                </div>
+                                <div class="question">
+                                    <p><%= question.title %></p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>Qual a diferença While, Do..while, forEach e For?</p>
+                            <div class="actions">
+                                <a href="#" class="checked" data-id="<%= question.id %>">
+                                    <img src="/images/check.svg" >  
+                                </a>
+                                <a href="#"class="delete" data-id="<%= question.id %>">
+                                    <img src="/images/bin.svg" >
+                                </a>
                             </div>
+                            
                         </div>
-                        <div class="actions">
-                            <a href="#" class="checked" data-id="3">
-                                <img src="/images/check.svg" >  
-                            </a>
-                            <a href="#"class="delete" data-id="3">
-                                <img src="/images/bin.svg" >
-                                 
-                            </a>
-                        </div>
-                        
-                    </div>
+                    <%})%>
 
-                    <div class="question-wrapper">
-                        <div class="quetion-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="user">
+                    <% questionsRead.forEach(questionRead =>{%>
+                        <div class="question-wrapper read">
+                            <div class="quetion-content">
+                                <div class="user">
+                                    <img src="/images/user.svg" alt="user">
+                                </div>
+                                <div class="question ">
+                                    <p><%= questionRead.title %></p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>Qual de java e Javascript?</p>
-                            </div>
+                            <div class="actions">
+                               
+                                <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                                    <img src="/images/bin.svg" >
+                                     
+                                </a>
+                            </div>   
                         </div>
-                        <div class="actions">
-                            <a href="#" class="checked" data-id="4">
-                                <img src="/images/check.svg" >  
-                            </a>
-                            <a href="#"class="delete" data-id="4">
-                                <img src="/images/bin.svg"  >
-                                 
-                            </a>
-                        </div>
-                        
-                    </div>
+                    <%})%>
 
-                    <div class="question-wrapper read">
-                        <div class="quetion-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="user">
-                            </div>
-                            <div class="question">
-                                <p>O que são Variaveis ?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                           
-                            <a href="#" class="delete" data-id="1">
-                                <img src="/images/bin.svg" >
-                                 
-                            </a>
-                        </div>
-                        
-                    </div>
                 </div>
             </section>
         </main>

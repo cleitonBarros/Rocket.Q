@@ -13,18 +13,13 @@ const initDb ={
 
         await db.exec(`  CREATE TABLE question(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            titulo TEXT,
-            read INT
+            title TEXT,
+            read INT,
+            room INT
 
         )`);
     
         await  db.close();
-   
-    
-            console.error('(FROM ASYNC/AWAIT) Errour cause is',error)
-        
-
-      
     }
 }
 
