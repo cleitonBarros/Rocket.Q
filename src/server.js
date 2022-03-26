@@ -15,6 +15,6 @@ server.use(express.urlencoded({extended: true}))
 
 server.use(route)
 server.listen(3000,()=>{
-    console.log('Rodando na porta 3100')
+    console.log('Rodando  http://localhost:3000/')
 });
 

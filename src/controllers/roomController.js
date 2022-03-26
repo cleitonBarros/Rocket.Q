@@ -47,14 +47,14 @@ module.exports = {
         const questions = await db.all(`SELECT * FROM question WHERE room = ${roomId} and read = 0`)
         const questionsRead= await db.all(`SELECT * FROM question WHERE room = ${roomId} AND read = 1`)
 
-        let isNoQuestion=false;
-        if(questions.leght === 0){
-            if(questionsRead.length ==0){
-                isNoQuestion = true
-            }
+        let isNoQuestions
 
+        if(questions.length ==0){
+            if(questionsRead.length == 0){
+                isNoQuestions = true
+            }
         }
-        res.render("room",{roomId:roomId, questions:questions, questionsRead: questionsRead, isNoQuestion: isNoQuestion} )
+        res.render("room",{roomId:roomId, questions:questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions} )
    },
 
         enter(req, res) {

@@ -9,10 +9,13 @@ const modalButton = document.querySelector('.modal button')
 //pega tod  os botoes
 const btnCheck = document.querySelectorAll(".actions a.checked")
 const btnDelete = document.querySelectorAll(".actions a.delete")
-//pegar quando o marco for lido
+
+//Pegar todos os botões que existe com a classe check
 for(const  element of btnCheck){
     element.addEventListener("click",handleClick)
 
+
+//Quando o botão delete for clicado ele abre a modal 
 }
 for(const  element of btnDelete){
     element.addEventListener("click", (event) =>{
@@ -22,7 +25,7 @@ for(const  element of btnDelete){
 }
 
 function handleClick(event, check =true){
-    console.log(event)
+    
     event.preventDefault()
     //pegando action
     const slug = check ? "check" : "delete"

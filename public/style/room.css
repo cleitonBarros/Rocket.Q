@@ -128,21 +128,21 @@
     background: var(--gray-blue)
 }
 /* No-Quetions*/
-.no-quetions{ 
+.no-questions{ 
     text-align: center;
     margin-top:5.2rem;
 }
-.no-quetions img{ 
+.no-questions img{ 
     max-width:100%;
     margin-bottom:1.4rem;
 }
-.no-quetions p{
+.no-questions p{
 font-family: 'Poppins',sans-serif;
 font-size: 1.8rem;
 font-weight: 600
 
 }
-.no-quetions p + p{
+.no-questions p + p{
     font-family: 'Open Sans',sans-serif;
     font-size: 1.4rem;
     font-weight:400;
