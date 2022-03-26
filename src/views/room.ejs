@@ -63,20 +63,22 @@
 
                     <%  questions.forEach(question => {%>
                         <div class="question-wrapper">
-                            <div class="quetion-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="user">
+                             <div class="question-content">
+                                    <div class="user">
+                                        <img src="/images/user.svg" alt="Avatar">
+                                    </div>
+                                    <div class="question">
+                                        <p><%= question.title  %></p>
+                                    </div>
                                 </div>
-                                <div class="question">
-                                    <p><%= question.title %></p>
-                                </div>
-                            </div>
                             <div class="actions">
                                 <a href="#" class="checked" data-id="<%= question.id %>">
-                                    <img src="/images/check.svg" >  
+                                    <img src="/images/check.svg" > 
+                                    Marca como lida 
                                 </a>
                                 <a href="#"class="delete" data-id="<%= question.id %>">
                                     <img src="/images/bin.svg" >
+                                    Excluir
                                 </a>
                             </div>
                             
