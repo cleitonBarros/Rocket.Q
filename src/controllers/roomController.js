@@ -26,7 +26,7 @@ module.exports = {
                       pass
                   ) VALUES (
                       ${parseInt(roomId)},
-                      ${pass}
+                      "${pass}"
                   ) `)
               }
    
@@ -54,7 +54,7 @@ module.exports = {
                 isNoQuestions = true
             }
         }
-        res.render("room",{roomId:roomId, questions:questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions} )
+        res.render("room",{roomId:roomId, questions:questions, questionsRead: questionsRead, isNoQuestions:isNoQuestions} )
    },
 
         enter(req, res) {

@@ -8,10 +8,13 @@ module.exports={
         const action =req.params.action
         const password = req.body.password
 
+        
+
        //verificar a senha 
-       const isVrai= await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
-       if(isVrai.pass == password ){
-           if(action == "delete" ){
+       const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
+        if(verifyRoom.pass == password){
+            if(action == "delete"){
+
 
             await db.run(`DELETE FROM question WHERE id = ${questionId}`)
            }else if(action == "checked"){

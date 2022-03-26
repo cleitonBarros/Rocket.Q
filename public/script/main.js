@@ -25,7 +25,7 @@ for(const  element of btnDelete){
 }
 
 function handleClick(event, check =true){
-    
+    console.log(event.target.dataset.id )
     event.preventDefault()
     //pegando action
     const slug = check ? "check" : "delete"
